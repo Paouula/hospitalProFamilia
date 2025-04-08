@@ -21,11 +21,11 @@ loginControllers.login = async (req, res) =>{
             userFound = {_id: "admin"}
         }else{
             //2.Empleado
-            userFound = await employeesModel.findOne({email}),
+            userFound = await doctorModel.findOne({email}),
             userType = "employee"
 
             if(!userFound){
-                userFound = await customersModel.findOne({email})
+                userFound = await patientsModel.findOne({email})
                 userType = "customer"
             }
         }

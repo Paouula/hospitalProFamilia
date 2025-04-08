@@ -1,11 +1,10 @@
 const appointmentControllers = {};
 
-import appointment from "../models/appointment.js";
 import appointmentModel from "../models/appointment.js";
 
 //SELECT
 appointmentControllers.getAppointment = async (req, res) => {
-    const Appointment = await appointmentModel.find()
+    const appointment = await appointmentModel.find().populate("idDoctor").populate("idPatient")
     res.json(appointment)
 }
 
