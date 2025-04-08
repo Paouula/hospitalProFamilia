@@ -19,7 +19,7 @@ registerDoctorController.register = async (req, res) => {
         const passwordHash = await bcryptjs.hash(password, 10)
 
         //Guardemos al empleado nuevo
-        const newDoctor = new employeesModel({
+        const newDoctor = new doctorModel({
             name, 
             specialty,
             email, 
