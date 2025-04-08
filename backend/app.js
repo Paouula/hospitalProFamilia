@@ -5,6 +5,10 @@ import appointmentRoutes from "./src/routes/appointment.js";
 
 import cookieParser from "cookie-parser";
 import registerDoctorRoutes from "./src/routes/registerDoctor.js";
+import loginRoutes from "./src/routes/login.js";
+//Preguntar pq da este error
+import logoutRoutes form "./src/routes/logout.js";
+
 
 const app = express();
 
@@ -17,5 +21,7 @@ app.use("/api/patients", patientsRoutes);
 app.use("/api/appointment", appointmentRoutes);
 
 app.use("/api/registerDoctor", registerDoctorRoutes);
+app.use("/api/login", loginRoutes);
+app.use("/api/logout", logoutRoutes);
 
 export default app;
